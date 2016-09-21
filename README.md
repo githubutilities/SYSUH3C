@@ -1,6 +1,6 @@
 # H3C Client For SYSU East Campus
 
-> NOTE: Because a bug exists in my modified fork of [YaH3C](https://github.com/githubutilities/YaH3C). Thus, I rewrote H3C in C to avoid the bug of `pcap` in python. Tested in OSX.
+> NOTE: Because a bug(You can't inject packet using python version of `pcap` after sleep or reboot.) exists in my modified fork of [YaH3C](https://github.com/githubutilities/YaH3C). Thus, I rewrote H3C in C to avoid the bug of `pcap` in python. Tested in OSX.
 
 # Installation
 
