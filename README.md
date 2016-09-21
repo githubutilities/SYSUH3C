@@ -1,5 +1,6 @@
 # H3C Client For SYSU East Campus
 
+> NOTE: Tested in OSX.
 
 # Installation
 
