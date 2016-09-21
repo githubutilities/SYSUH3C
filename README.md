@@ -46,3 +46,5 @@
 * [中山大学东校区校园网认证的客户端（非官方）YaH3C](https://github.com/humiaozuzu/YaH3C)
 * [西电北校区校园网客户端Linux CLI版 xd-h3c](https://github.com/godspeed1989/xd-h3c)
 * [My Fork of YaH3C](https://github.com/githubutilities/YaH3C)
+* [Apple pcap man page](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man3/pcap.3pcap.html)
+* [Using libpcap C](http://www.devdungeon.com/content/using-libpcap-c)
