@@ -31,7 +31,7 @@ int response_identity(pcap_t *handle,
 	const uint8_t *request, 
 	const char *username);
 int response_md5(pcap_t *handle, 
-	const uint8_t ethhdr[14],
+	uint8_t ethhdr[14],
 	const uint8_t *request,
 	const char *username,
 	const char *password);
@@ -219,7 +219,7 @@ int response_identity(pcap_t *handle,
 }
 
 int response_md5(pcap_t *handle, 
-	const uint8_t ethhdr[14],
+	uint8_t ethhdr[14],
 	const uint8_t *request,
 	const char *username,
 	const char *password) {
