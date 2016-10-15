@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <assert.h>
+#include <time.h>
 
 #include <pcap/pcap.h>
 #include <net/ethernet.h>
@@ -91,12 +92,29 @@ void server_forever(const char *device_name) {
 		pcap_setfilter(handle, &fcode);
 		fprintf(stdout, "Server MAC is %02x:%02x:%02x:%02x:%02x:%02x\n",
                 dst_mac[0], dst_mac[1], dst_mac[2], dst_mac[3], dst_mac[4], dst_mac[5]);
+
+		clock_t pre_time = 0;
+		clock_t cur_time = 0;
+		clock_t elapsed = 0;
+		int cnt = 0;
 		while (!logoff) {
+			int loop_cnt = 0;
 			while (pcap_next_ex(handle, &header, &captured) != 1) {
 				fprintf(stdout, ".");
 				fflush(stdout);
+				if (loop_cnt++ > 500) break;
 			}
+
 			putchar('\n');
+
+			cur_time = clock();
+			elapsed = cur_time - pre_time;
+			fprintf(stderr, "time elapsed: %lu\n", elapsed);
+			pre_time = cur_time;
+			cnt = (elapsed > 500) ? cnt + 1: 0;
+			if (cnt > 100)
+				break;
+
 
 			debug_print(captured, 32);
 
