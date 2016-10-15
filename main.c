@@ -93,6 +93,9 @@ void server_forever(const char *device_name) {
 		fprintf(stdout, "Server MAC is %02x:%02x:%02x:%02x:%02x:%02x\n",
                 dst_mac[0], dst_mac[1], dst_mac[2], dst_mac[3], dst_mac[4], dst_mac[5]);
 
+		// send start package again
+		send_start_pkt(handle, mac);
+
 		clock_t pre_time = 0;
 		clock_t cur_time = 0;
 		clock_t elapsed = 0;
